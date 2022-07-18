@@ -9,13 +9,12 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(path.join(__dirname, 'public')))
 
+/*
+app.get('/', (req, res) => {
+  res.send('home')
+})*/
 
 app.get('/', (req, res) => {
-  res.send('Bem vindo ao sistema de fundos')
-
-})
-
-app.get('/home', (req, res) => {
   res.render('home')
 })
 
