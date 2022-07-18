@@ -1,21 +1,13 @@
-const express = require('express') //importa express
-const app = express() // chamar express
-const path = require('path') //módulo fornece utilitários para trabalhar com caminhos de arquivos e diretórios.
+const express = require('express')
+const app = express()
+const path = require('path')
 const investimento = require('./lib/convert')
 const rendimento = require('./lib/convert')
 const porta = 3000
 
-/*
-Antes do Express poder renderizar arquivos de modelo, as seguintes configurações do aplicativo devem ser configuradas:
-
-views, é o diretório onde os arquivos de modelo estão localizados. Por exemplo: app.set('views',
-'./views')
-view engine, o mecanismo de modelo a ser usado. Por Exemplo: app.set('view engine', 'pug') nesse caso estou usando o ejs
-*/
-
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
-app.use(express.static(path.join(__dirname, 'public'))) // lugar para guardar os arquivos como CSS ('public' é o nome da pasta node)
+app.use(express.static(path.join(__dirname, 'public')))
 
 
 app.get('/', (req, res) => {
