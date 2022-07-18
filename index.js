@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 app.get('/calculo', (req, res) => {
   const { nome, cotas, valor, dividendo } = req.query
 
-  if (cotas, valor, dividendo) {
+  if (cotas && valor && dividendo) {
 
     const soma_invertimento = investimento.investimento(cotas, valor)
     const soma_rendimento = rendimento.rendimento(cotas, dividendo)
@@ -42,7 +42,7 @@ app.get('/calculo', (req, res) => {
     })
   } else {
     res.render('calculo', {
-      error: 'Valores Inválidos por favo tente novamente'
+      error: 'Valores Inválidos por favor tente novamente'
     })
 
   }
