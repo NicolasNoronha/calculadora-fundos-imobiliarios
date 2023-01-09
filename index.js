@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
   res.send('home')
 })*/
 
+
 app.get('/', (req, res) => {
   res.render('home')
 })
